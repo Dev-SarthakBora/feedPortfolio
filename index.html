@@ -1,0 +1,1107 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Bora | Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e27;
+            color: #e0e7ff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Animated Background */
+        .bg-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1629 100%);
+        }
+
+        .grid-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+            top: -10%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            bottom: -10%;
+            left: -5%;
+            animation-delay: 5s;
+        }
+
+        .orb-3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 30px) scale(0.9); }
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 12px 48px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        /* Hero Section */
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background: #6366f1;
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Skill Pills */
+        .skill-pill {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .skill-pill:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Progress Bars */
+        .progress-bar {
+            height: 8px;
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: slideShine 2s infinite;
+        }
+
+        @keyframes slideShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Project Cards */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        /* Stats Counter */
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #6366f1;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 18px);
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.5), transparent);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .orb {
+                width: 250px !important;
+                height: 250px !important;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #8b5cf6, #6366f1);
+        }
+
+        /* Data Visualization Effect */
+        .data-viz {
+            position: relative;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding: 20px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #6366f1, #8b5cf6);
+            border-radius: 4px 4px 0 0;
+            animation: growBar 1.5s ease-out;
+            position: relative;
+        }
+
+        @keyframes growBar {
+            from { height: 0; }
+        }
+
+        .bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2), transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="grid-overlay"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">SB</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed top-16 left-0 right-0 bg-slate-900/95 backdrop-blur-lg z-50 p-6 space-y-4">
+        <a href="#home" class="block hover:text-indigo-400 transition">Home</a>
+        <a href="#about" class="block hover:text-indigo-400 transition">About</a>
+        <a href="#skills" class="block hover:text-indigo-400 transition">Skills</a>
+        <a href="#projects" class="block hover:text-indigo-400 transition">Projects</a>
+        <a href="#contact" class="block hover:text-indigo-400 transition">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="mb-6">
+                    <span class="inline-block px-4 py-2 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-sm font-semibold text-indigo-300 mb-4">
+                        <i class="fas fa-chart-line mr-2"></i>Data Analyst
+                    </span>
+                </div>
+                <h1 class="hero-title mb-4">
+                    Sarthak Bora
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+                    Transforming raw data into actionable insights through 
+                    <span class="text-indigo-400 font-semibold">advanced analytics</span>, 
+                    <span class="text-purple-400 font-semibold">visualization</span>, and 
+                    <span class="text-blue-400 font-semibold">machine learning</span>
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <a href="#contact" class="btn-primary text-white">
+                        <i class="fas fa-envelope mr-2"></i>Get In Touch
+                    </a>
+                    <a href="#projects" class="px-8 py-3 bg-transparent border-2 border-indigo-500 rounded-lg hover:bg-indigo-500/10 transition font-semibold">
+                        <i class="fas fa-folder-open mr-2"></i>View Projects
+                    </a>
+                </div>
+                <div class="flex justify-center gap-6 text-2xl">
+                    <a href="INSERT_GITHUB_URL_HERE" target="_blank" class="hover:text-indigo-400 transition transform hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" class="hover:text-indigo-400 transition transform hover:scale-110">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:sarthak@example.com" class="hover:text-indigo-400 transition transform hover:scale-110">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down text-indigo-400 text-2xl"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="glass-card stat-card fade-in">
+                        <div class="stat-number" data-target="15">0</div>
+                        <p class="text-slate-400 mt-2">Projects Completed</p>
+                    </div>
+                    <div class="glass-card stat-card fade-in" style="transition-delay: 0.1s">
+                        <div class="stat-number" data-target="8">0</div>
+                        <p class="text-slate-400 mt-2">Technical Skills</p>
+                    </div>
+                    <div class="glass-card stat-card fade-in" style="transition-delay: 0.2s">
+                        <div class="stat-number" data-target="100">0</div>
+                        <p class="text-slate-400 mt-2">Data Insights</p>
+                    </div>
+                    <div class="glass-card stat-card fade-in" style="transition-delay: 0.3s">
+                        <div class="stat-number" data-target="5">0</div>
+                        <p class="text-slate-400 mt-2">Tools Mastered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">About Me</span>
+                </h2>
+                <p class="text-center text-slate-400 mb-16 fade-in">Passionate about uncovering stories hidden in data</p>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-card p-8 fade-in">
+                        <div class="data-viz mb-6">
+                            <div class="bar" style="height: 75%;"></div>
+                            <div class="bar" style="height: 90%;"></div>
+                            <div class="bar" style="height: 65%;"></div>
+                            <div class="bar" style="height: 85%;"></div>
+                            <div class="bar" style="height: 95%;"></div>
+                            <div class="bar" style="height: 70%;"></div>
+                        </div>
+                        <p class="text-center text-sm text-slate-400">Sample Data Visualization</p>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-indigo-300">
+                            <i class="fas fa-user-graduate mr-3"></i>Professional Journey
+                        </h3>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            As a dedicated Data Analyst, I specialize in extracting meaningful insights from complex datasets. 
+                            My expertise spans statistical analysis, data visualization, and predictive modeling, enabling 
+                            businesses to make data-driven decisions with confidence.
+                        </p>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            I'm proficient in Python, SQL, and various BI tools, with a strong foundation in exploratory 
+                            data analysis, feature engineering, and machine learning fundamentals. My approach combines 
+                            technical rigor with clear communication to bridge the gap between data and actionable strategy.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-400"></i>
+                                <span>Statistical Analysis & Hypothesis Testing</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-400"></i>
+                                <span>Data Visualization & Storytelling</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-400"></i>
+                                <span>Predictive Modeling & ML Basics</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-400"></i>
+                                <span>Database Management & ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-6 bg-slate-900/30">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Technical Arsenal</span>
+                </h2>
+                <p class="text-center text-slate-400 mb-16 fade-in">Tools and technologies I work with daily</p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Programming Languages -->
+                    <div class="glass-card p-8 fade-in">
+                        <h3 class="text-xl font-bold mb-6 text-indigo-300">
+                            <i class="fas fa-code mr-3"></i>Programming Languages
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Python</span>
+                                    <span class="text-slate-400">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">SQL</span>
+                                    <span class="text-slate-400">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">R</span>
+                                    <span class="text-slate-400">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tools -->
+                    <div class="glass-card p-8 fade-in" style="transition-delay: 0.1s">
+                        <h3 class="text-xl font-bold mb-6 text-purple-300">
+                            <i class="fas fa-tools mr-3"></i>Data & Analytics Tools
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Pandas / NumPy</span>
+                                    <span class="text-slate-400">90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Tableau / Power BI</span>
+                                    <span class="text-slate-400">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold">Excel (Advanced)</span>
+                                    <span class="text-slate-400">95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Tags -->
+                <div class="glass-card p-8 fade-in">
+                    <h3 class="text-xl font-bold mb-6 text-blue-300 text-center">
+                        <i class="fas fa-layer-group mr-3"></i>Core Competencies
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="skill-pill">Exploratory Data Analysis</span>
+                        <span class="skill-pill">Statistical Modeling</span>
+                        <span class="skill-pill">Data Cleaning & Wrangling</span>
+                        <span class="skill-pill">Data Visualization</span>
+                        <span class="skill-pill">Machine Learning</span>
+                        <span class="skill-pill">A/B Testing</span>
+                        <span class="skill-pill">Database Design</span>
+                        <span class="skill-pill">ETL Pipelines</span>
+                        <span class="skill-pill">Feature Engineering</span>
+                        <span class="skill-pill">Business Intelligence</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Matplotlib / Seaborn</span>
+                        <span class="skill-pill">Git / GitHub</span>
+                        <span class="skill-pill">Jupyter Notebook</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Featured Projects</span>
+                </h2>
+                <p class="text-center text-slate-400 mb-16 fade-in">Real-world data challenges solved</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="glass-card project-card p-6 fade-in">
+                        <div class="w-full h-48 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Sales Performance Dashboard</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Interactive dashboard analyzing sales trends, customer segmentation, and revenue forecasting using Python and Tableau.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">Python</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">Tableau</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">Pandas</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card project-card p-6 fade-in" style="transition-delay: 0.1s">
+                        <div class="w-full h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Customer Churn Prediction</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Machine learning model predicting customer churn with 87% accuracy using Random Forest and feature engineering techniques.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">Scikit-learn</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">ML</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">EDA</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-card project-card p-6 fade-in" style="transition-delay: 0.2s">
+                        <div class="w-full h-48 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-database text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">SQL Database Optimization</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Redesigned and optimized database schema, reducing query time by 65% and improving data retrieval efficiency.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">SQL</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">PostgreSQL</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">ETL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="glass-card project-card p-6 fade-in" style="transition-delay: 0.3s">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-600 to-teal-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Market Trend Analysis</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Time series analysis of market trends with visualization showing seasonal patterns and forecasting future demand.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">Python</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">Time Series</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">Forecasting</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="glass-card project-card p-6 fade-in" style="transition-delay: 0.4s">
+                        <div class="w-full h-48 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-users text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Customer Segmentation</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            K-means clustering algorithm to segment customers into distinct groups for targeted marketing strategies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">Clustering</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">ML</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">Visualization</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="glass-card project-card p-6 fade-in" style="transition-delay: 0.5s">
+                        <div class="w-full h-48 bg-gradient-to-br from-red-600 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-6xl text-white/80"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Healthcare Data Analysis</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Analyzed patient data to identify treatment effectiveness patterns and improve healthcare outcomes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full">Statistics</span>
+                            <span class="text-xs px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full">EDA</span>
+                            <span class="text-xs px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full">Power BI</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-indigo-400 hover:text-indigo-300 transition">
+                                <i class="fab fa-github mr-1"></i>Code
+                            </a>
+                            <a href="#" class="text-purple-400 hover:text-purple-300 transition">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="py-20 px-6 bg-slate-900/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Professional Journey</span>
+                </h2>
+                <p class="text-center text-slate-400 mb-16 fade-in">My data analytics career path</p>
+
+                <div class="space-y-6">
+                    <div class="timeline-item fade-in">
+                        <div class="glass-card p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-indigo-300">Data Analyst</h3>
+                                    <p class="text-slate-400">Freelance / Contract</p>
+                                </div>
+                                <span class="text-sm text-slate-500">2023 - Present</span>
+                            </div>
+                            <p class="text-slate-300">
+                                Conducting end-to-end data analysis projects, from data collection and cleaning to visualization 
+                                and insight generation. Building predictive models and dashboards for various clients.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="glass-card p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-purple-300">Data Analytics Intern</h3>
+                                    <p class="text-slate-400">Various Organizations</p>
+                                </div>
+                                <span class="text-sm text-slate-500">2022 - 2023</span>
+                            </div>
+                            <p class="text-slate-300">
+                                Assisted in data collection, cleaning, and analysis. Created visualizations and reports 
+                                to support business decisions. Learned industry-standard tools and methodologies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item fade-in">
+                        <div class="glass-card p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-blue-300">Certifications & Training</h3>
+                                    <p class="text-slate-400">Online Learning Platforms</p>
+                                </div>
+                                <span class="text-sm text-slate-500">2021 - 2022</span>
+                            </div>
+                            <p class="text-slate-300">
+                                Completed comprehensive courses in Python, SQL, Machine Learning, and Data Visualization. 
+                                Built portfolio projects demonstrating practical skills in data analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Let's Connect</span>
+                </h2>
+                <p class="text-center text-slate-400 mb-16 fade-in">Have a project or opportunity? Let's discuss!</p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8 fade-in">
+                        <h3 class="text-2xl font-bold mb-6 text-indigo-300">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-400">Email</p>
+                                    <a href="mailto:sarthak@example.com" class="text-slate-200 hover:text-indigo-400 transition">sarthak@example.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-400">LinkedIn</p>
+                                    <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" class="text-slate-200 hover:text-purple-400 transition">linkedin.com/in/sarthakbora</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-github text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-slate-400">GitHub</p>
+                                    <a href="INSERT_GITHUB_URL_HERE" target="_blank" class="text-slate-200 hover:text-blue-400 transition">github.com/sarthakbora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 fade-in" style="transition-delay: 0.1s">
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Name</label>
+                                <input type="text" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Email</label>
+                                <input type="email" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full text-white">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 px-6 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="text-slate-400 mb-4">
+                    © 2024 Sarthak Bora. Transforming Data into Insights.
+                </p>
+                <div class="flex justify-center gap-6 text-xl">
+                    <a href="INSERT_GITHUB_URL_HERE" target="_blank" class="hover:text-indigo-400 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="INSERT_LINKEDIN_URL_HERE" target="_blank" class="hover:text-indigo-400 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:sarthak@example.com" class="hover:text-indigo-400 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade-in Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.floor(current) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    if (counter && !counter.classList.contains('animated')) {
+                        counter.classList.add('animated');
+                        animateCounter(counter);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+
+        // Contact Form Handler
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form. In production, this would send an actual email.');
+            contactForm.reset();
+        });
+
+        // Add active navbar indicator
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-indigo-400');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-indigo-400');
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
+```
