@@ -929,22 +929,47 @@
                     </div>
 
                     <div class="glass-card p-8 fade-in" style="transition-delay: 0.1s">
-                        <form id="contactForm" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Name</label>
-                                <input type="text" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="Your name">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Email</label>
-                                <input type="email" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="your@email.com">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Message</label>
-                                <textarea rows="4" class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition" placeholder="Your message..."></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary w-full text-white">
-                                <i class="fas fa-paper-plane mr-2"></i>Send Message
-                            </button>
+                        <form 
+                          action="https://formspree.io/f/xrbndjld"
+                          method="POST"
+                          class="space-y-4"
+                        >
+                          <div>
+                            <label class="block text-sm font-semibold mb-2">Name</label>
+                            <input 
+                              type="text"
+                              name="name"
+                              required
+                              class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
+                              placeholder="Your name"
+                            >
+                          </div>
+                        
+                          <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input 
+                              type="email"
+                              name="email"
+                              required
+                              class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
+                              placeholder="your@email.com"
+                            >
+                          </div>
+                        
+                          <div>
+                            <label class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea 
+                              name="message"
+                              rows="4"
+                              required
+                              class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
+                              placeholder="Your message..."
+                            ></textarea>
+                          </div>
+                        
+                          <button type="submit" class="btn-primary w-full text-white">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                          </button>
                         </form>
                     </div>
                 </div>
@@ -1058,13 +1083,6 @@
             statsObserver.observe(card);
         });
 
-        // Contact Form Handler
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! This is a demo form. In production, this would send an actual email.');
-            contactForm.reset();
-        });
 
         // Add active navbar indicator
         window.addEventListener('scroll', () => {
