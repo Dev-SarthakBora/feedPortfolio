@@ -6,7 +6,7 @@ The website is fully **static**, **responsive**, and deployed using **GitHub Pag
 ---
 
 ## 🚀 Live Website
-👉 https://dev-sarthakbora.github.io/feedPortfolio/
+👉 https://dev-sarthakbora.github.io/Portfolio/
 
 ---
 
