@@ -616,76 +616,85 @@
     </div>
 
     <!-- Two Column Layout -->
-    <div class="grid md:grid-cols-2 gap-12 items-start">
+<div class="grid md:grid-cols-2 gap-12 items-start">
 
-      <!-- Visualization Card -->
-      <div class="data-viz mb-4" id="aboutViz">
+  <!-- LEFT COLUMN: Visualization -->
+  <div class="glass-card p-8 fade-in md:self-start">
+    
+    <!-- ===== Visualization (UNCHANGED) ===== -->
+    <div class="data-viz mb-4" id="aboutViz">
 
-  <div class="bar"
-       data-a="90" data-b="85"
-       data-label-a="ChatGPT / AI Tools"
-       data-label-b="Gaming"></div>
+      <div class="bar"
+           data-a="90" data-b="85"
+           data-label-a="ChatGPT / AI Tools"
+           data-label-b="Gaming"></div>
 
-  <div class="bar"
-       data-a="60" data-b="70"
-       data-label-a="Google Skills Boost"
-       data-label-b="Movies"></div>
+      <div class="bar"
+           data-a="60" data-b="70"
+           data-label-a="Google Skills Boost"
+           data-label-b="Movies"></div>
 
-  <div class="bar"
-       data-a="40" data-b="80"
-       data-label-a="Books / Guides"
-       data-label-b="Listening Music"></div>
+      <div class="bar"
+           data-a="40" data-b="80"
+           data-label-a="Books / Guides"
+           data-label-b="Listening Music"></div>
 
-  <div class="bar"
-       data-a="90" data-b="65"
-       data-label-a="YouTube Tech"
-       data-label-b="Exploring Tech / AI"></div>
+      <div class="bar"
+           data-a="90" data-b="65"
+           data-label-a="YouTube Tech"
+           data-label-b="Exploring Tech / AI"></div>
 
-  <div class="bar"
-       data-a="75" data-b="55"
-       data-label-a="LeetCode / HackerRank"
-       data-label-b="Organizing Workspace"></div>
+      <div class="bar"
+           data-a="75" data-b="55"
+           data-label-a="LeetCode / HackerRank"
+           data-label-b="Organizing Workspace"></div>
+
+    </div>
+
+    <p id="aboutVizCaption" class="text-center text-sm text-slate-400 mb-2">
+      Personal Usage: Preferred Learning Platforms
+    </p>
+
+    <p id="aboutVizLabels" class="text-center text-xs text-slate-500 mb-4">
+      ChatGPT / AI Tools · Google Skills Boost · Books / Guides · YouTube Tech · LeetCode / HackerRank
+    </p>
+
+    <div class="flex justify-center gap-3">
+      <button
+        class="px-4 py-2 text-sm border border-indigo-500 rounded-lg hover:bg-indigo-500/10 transition"
+        onclick="switchAboutViz('a')">
+        Learning Platforms
+      </button>
+
+      <button
+        class="px-4 py-2 text-sm border border-purple-500 rounded-lg hover:bg-purple-500/10 transition"
+        onclick="switchAboutViz('b')">
+        Hobbies
+      </button>
+    </div>
+    <!-- ===== END Visualization ===== -->
+
+  </div>
+
+  <!-- RIGHT COLUMN: How I Approach -->
+  <div class="fade-in md:self-start md:pt-2">
+    <h3 class="text-2xl font-bold mb-2 text-indigo-300">
+      🧠 How I Approach Data Problems
+    </h3>
+    <p class="text-sm text-slate-400 mb-4">
+      My analytical workflow and decision-making process
+    </p>
+    <ul class="space-y-4 text-slate-300 leading-relaxed">
+      <li>• Start by understanding the business goal behind the data</li>
+      <li>• Clean and validate data to ensure accuracy</li>
+      <li>• Explore trends and patterns through EDA</li>
+      <li>• Apply statistical or ML techniques when relevant</li>
+      <li>• Present insights in a clear, business-friendly format</li>
+    </ul>
+  </div>
 
 </div>
 
-        <p id="aboutVizCaption" class="text-center text-sm text-slate-400 mb-2">
-          Personal Usage: Preferred Learning Platforms
-        </p>
-        
-        <p id="aboutVizLabels" class="text-center text-xs text-slate-500 mb-4">
-          ChatGPT / AI Tools · Google Skills Boost · Books / Guides · YouTube Tech · LeetCode / HackerRank
-        </p>
-        
-        <div class="flex justify-center gap-3">
-          <button
-            class="px-4 py-2 text-sm border border-indigo-500 rounded-lg hover:bg-indigo-500/10 transition"
-            onclick="switchAboutViz('a')">
-            Learning Platforms
-          </button>
-        
-          <button
-            class="px-4 py-2 text-sm border border-purple-500 rounded-lg hover:bg-purple-500/10 transition"
-            onclick="switchAboutViz('b')">
-            Hobbies
-          </button>
-        </div>
-
-      <!-- How I Think -->
-      <div class="fade-in">
-        <h3 class="text-2xl font-bold mb-4 text-indigo-300">
-          🧠 How I Approach Data Problems
-        </h3>
-        <ul class="space-y-4 text-slate-300 leading-relaxed">
-          <li>• Start by understanding the business goal behind the data</li>
-          <li>• Clean and validate data to ensure accuracy</li>
-          <li>• Explore trends and patterns through EDA</li>
-          <li>• Apply statistical or ML techniques when relevant</li>
-          <li>• Present insights in a clear, business-friendly format</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
 </section>
 
         <!-- Skills Section -->
