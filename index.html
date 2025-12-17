@@ -415,6 +415,24 @@
             filter: blur(40px);
           }
         }
+        
+        /* Mobile performance optimization */
+        @media (max-width: 768px) {
+          .glass-card {
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none; /* Safari support */
+            background: rgba(30, 41, 59, 0.85);
+          }
+        }
+
+        /* Accessibility & performance: reduce motion */
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+
 
     </style>
 </head>
