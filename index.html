@@ -521,6 +521,23 @@
           transform: rotateY(180deg);
         }
 
+        /* Mobile flip performance optimization */
+        .project-inner {
+          will-change: transform;
+          transform: translateZ(0);
+        }
+        
+        .project-face {
+          transform: translateZ(0);
+        }
+
+        @media (max-width: 768px) {
+          .project-inner {
+            transition: transform 0.45s linear;
+          }
+        }
+        
+
     </style>
 </head>
 <body>
@@ -1496,6 +1513,17 @@
             
   });
 });
+
+        // Preload flip animation for mobile (prevents first-flip lag)
+        window.addEventListener('load', () => {
+          if (window.innerWidth <= 768) {
+            document.querySelectorAll('.project-card').forEach(card => {
+              card.classList.add('flipped');
+              card.offsetHeight; // force reflow
+              card.classList.remove('flipped');
+            });
+          }
+        });
 
     </script>
 </body>
