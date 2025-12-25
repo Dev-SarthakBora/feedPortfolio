@@ -658,165 +658,165 @@
             top: 0;
         }
 
-        /* Certifications Section Styles */
-        .cert-card {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
-            transition: left 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .cert-card:hover::before {
-            left: 100%;
-        }
-        
-        .cert-icon-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .cert-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-            border: 2px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #818cf8;
-            transition: all 0.3s ease;
-        }
-        
-        .cert-icon-purple {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.2));
-            border-color: rgba(139, 92, 246, 0.3);
-            color: #a78bfa;
-        }
-        
-        .cert-icon-blue {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
-            border-color: rgba(59, 130, 246, 0.3);
-            color: #60a5fa;
-        }
-        
-        .cert-icon-green {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
-            border-color: rgba(16, 185, 129, 0.3);
-            color: #34d399;
-        }
-        
-        .cert-icon-orange {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 146, 60, 0.2));
-            border-color: rgba(249, 115, 22, 0.3);
-            color: #fb923c;
-        }
-        
-        .cert-icon-pink {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 114, 182, 0.2));
-            border-color: rgba(236, 72, 153, 0.3);
-            color: #f472b6;
-        }
-        
-        .cert-card:hover .cert-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
-        }
-        
-        .cert-platform,
-        .cert-year {
-            font-size: 0.875rem;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-        }
-        
-        .cert-platform i,
-        .cert-year i {
-            color: #818cf8;
-            font-size: 0.75rem;
-        }
-        
-        .cert-cta {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            margin-top: auto;
-        }
-        
-        .cert-card:hover .cert-cta {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .cert-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 8px;
-            color: #c7d2fe;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .cert-link:hover {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
-            border-color: rgba(99, 102, 241, 0.5);
-            color: #e0e7ff;
-            transform: translateX(3px);
-        }
-        
-        .cert-link i {
-            font-size: 0.75rem;
-        }
-        
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .cert-card {
-                min-height: auto;
-            }
-            
-            .cert-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .cert-cta {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Accessibility: reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            .cert-card::before,
-            .cert-icon,
-            .cert-cta,
-            .cert-link {
-                transition: none;
-            }
-            
-            .cert-card:hover .cert-icon {
-                transform: none;
-            }
-        }
+/* Certifications Section Styles */
+.cert-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.cert-card:hover::before {
+    left: 100%;
+}
+
+.cert-icon-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.cert-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #818cf8;
+    transition: all 0.3s ease;
+}
+
+.cert-icon-purple {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.2));
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #a78bfa;
+}
+
+.cert-icon-blue {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+}
+
+.cert-icon-green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
+
+.cert-icon-orange {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 146, 60, 0.2));
+    border-color: rgba(249, 115, 22, 0.3);
+    color: #fb923c;
+}
+
+.cert-icon-pink {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 114, 182, 0.2));
+    border-color: rgba(236, 72, 153, 0.3);
+    color: #f472b6;
+}
+
+.cert-card:hover .cert-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+.cert-platform,
+.cert-year {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+}
+
+.cert-platform i,
+.cert-year i {
+    color: #818cf8;
+    font-size: 0.75rem;
+}
+
+.cert-cta {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.cert-card:hover .cert-cta {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 8px;
+    color: #c7d2fe;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cert-link:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+    border-color: rgba(99, 102, 241, 0.5);
+    color: #e0e7ff;
+    transform: translateX(3px);
+}
+
+.cert-link i {
+    font-size: 0.75rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .cert-card {
+        min-height: auto;
+    }
+    
+    .cert-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .cert-cta {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .cert-card::before,
+    .cert-icon,
+    .cert-cta,
+    .cert-link {
+        transition: none;
+    }
+    
+    .cert-card:hover .cert-icon {
+        transform: none;
+    }
+}
     </style>
 </head>
 <body class="loading">
@@ -2067,67 +2067,76 @@
             }
         });
 
-        // Certifications Section Interactive Behavior
-        (function() {
-            'use strict';
+    // Certifications Section Interactive Behavior
+(function() {
+    'use strict';
+    
+    // Ensure DOM is fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCertifications);
+    } else {
+        initCertifications();
+    }
+    
+    function initCertifications() {
+        const certCards = document.querySelectorAll('.cert-card');
+        
+        if (certCards.length === 0) return;
+        
+        // Keyboard accessibility for cert cards
+        certCards.forEach(card => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'article');
+            card.setAttribute('aria-label', 'Certification card');
             
-            // Ensure DOM is fully loaded
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initCertifications);
-            } else {
-                initCertifications();
+            // Allow keyboard navigation to trigger hover state
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const link = this.querySelector('.cert-link');
+                    if (link) {
+                        link.click();
+                    }
+                }
+            });
+            
+            // Focus management for better UX - subtle feedback
+            card.addEventListener('focus', function() {
+                this.classList.add('cert-focused');
+            });
+            
+            card.addEventListener('blur', function() {
+                this.classList.remove('cert-focused');
+            });
+        });
+        
+        // Subtle focus styles via inline style injection
+        const focusStyle = document.createElement('style');
+        focusStyle.textContent = `
+            .cert-card.cert-focused {
+                outline: 2px solid rgba(139, 92, 246, 0.5);
+                outline-offset: 2px;
+                opacity: 0.95;
             }
             
-            function initCertifications() {
-                const certCards = document.querySelectorAll('.cert-card');
-                
-                if (certCards.length === 0) return;
-                
-                // Keyboard accessibility for cert cards
-                certCards.forEach(card => {
-                    card.setAttribute('tabindex', '0');
-                    card.setAttribute('role', 'article');
-                    card.setAttribute('aria-label', 'Certification card');
-                    
-                    // Allow keyboard navigation to trigger hover state
-                    card.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            const link = this.querySelector('.cert-link');
-                            if (link) {
-                                link.click();
-                            }
-                        }
-                    });
-                    
-                    // Focus management for better UX
-                    card.addEventListener('focus', function() {
-                        this.classList.add('cert-focused');
-                    });
-                    
-                    card.addEventListener('blur', function() {
-                        this.classList.remove('cert-focused');
-                    });
-                });
-                
-                // Optional: Add focus styles via inline style injection
-                // (keeps CSS isolation clean)
-                const focusStyle = document.createElement('style');
-                focusStyle.textContent = `
-                    .cert-card.cert-focused {
-                        outline: 3px solid #8b5cf6;
-                        outline-offset: 3px;
-                    }
-                    
-                    .cert-card.cert-focused .cert-cta {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                `;
-                document.head.appendChild(focusStyle);
+            .cert-card.cert-focused .cert-cta {
+                opacity: 1;
+                transform: translateY(0);
             }
-        })();
-
+            
+            .cert-card:active {
+                transform: scale(0.98);
+                opacity: 0.9;
+            }
+            
+            .cert-link:active {
+                transform: translateX(3px) scale(0.97);
+                opacity: 0.85;
+            }
+        `;
+        document.head.appendChild(focusStyle);
+    }
+})();
     </script>
 </body>
 </html>
