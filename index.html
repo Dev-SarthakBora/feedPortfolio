@@ -657,6 +657,166 @@
         .skip-link:focus {
             top: 0;
         }
+
+        /* Certifications Section Styles */
+        .cert-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .cert-card:hover::before {
+            left: 100%;
+        }
+        
+        .cert-icon-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #818cf8;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-icon-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.2));
+            border-color: rgba(139, 92, 246, 0.3);
+            color: #a78bfa;
+        }
+        
+        .cert-icon-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2));
+            border-color: rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+        
+        .cert-icon-green {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }
+        
+        .cert-icon-orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(251, 146, 60, 0.2));
+            border-color: rgba(249, 115, 22, 0.3);
+            color: #fb923c;
+        }
+        
+        .cert-icon-pink {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(244, 114, 182, 0.2));
+            border-color: rgba(236, 72, 153, 0.3);
+            color: #f472b6;
+        }
+        
+        .cert-card:hover .cert-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+        
+        .cert-platform,
+        .cert-year {
+            font-size: 0.875rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cert-platform i,
+        .cert-year i {
+            color: #818cf8;
+            font-size: 0.75rem;
+        }
+        
+        .cert-cta {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .cert-card:hover .cert-cta {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            color: #c7d2fe;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-link:hover {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25));
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #e0e7ff;
+            transform: translateX(3px);
+        }
+        
+        .cert-link i {
+            font-size: 0.75rem;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .cert-card {
+                min-height: auto;
+            }
+            
+            .cert-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .cert-cta {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Accessibility: reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .cert-card::before,
+            .cert-icon,
+            .cert-cta,
+            .cert-link {
+                transition: none;
+            }
+            
+            .cert-card:hover .cert-icon {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body class="loading">
@@ -685,6 +845,7 @@
                 <a href="#about" class="hover:text-indigo-400 transition">About</a>
                 <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
                 <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+                <a href="#certifications" class="hover:text-indigo-400 transition">Certifications</a>
                 <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
             </div>
             <button
@@ -711,6 +872,7 @@
         <a href="#about" class="block hover:text-indigo-400 transition">About</a>
         <a href="#skills" class="block hover:text-indigo-400 transition">Skills</a>
         <a href="#projects" class="block hover:text-indigo-400 transition">Projects</a>
+        <a href="#certifications" class="block hover:text-indigo-400 transition">Certifications</a>
         <a href="#contact" class="block hover:text-indigo-400 transition">Contact</a>
     </div>
 
@@ -1362,6 +1524,144 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
+            <section id="certifications" class="py-20 px-6 bg-slate-900/30">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 fade-in">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Certifications</span>
+                    </h2>
+                    <p class="text-center text-slate-300 mb-16 fade-in">Professional credentials and continuous learning</p>
+            
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Certification Card 1 -->
+                        <div class="glass-card cert-card p-6 fade-in">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">Google Data Analytics Professional Certificate</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>Google / Coursera
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!-- Certification Card 2 -->
+                        <div class="glass-card cert-card p-6 fade-in" style="transition-delay: 0.1s">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon cert-icon-purple">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">Python for Data Science</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>IBM / Cognitive Class
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2022
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!-- Certification Card 3 -->
+                        <div class="glass-card cert-card p-6 fade-in" style="transition-delay: 0.2s">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon cert-icon-blue">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">SQL for Data Science</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>University of California, Davis
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2022
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!-- Certification Card 4 -->
+                        <div class="glass-card cert-card p-6 fade-in" style="transition-delay: 0.3s">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon cert-icon-green">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">Power BI Data Visualization</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>Microsoft
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!-- Certification Card 5 -->
+                        <div class="glass-card cert-card p-6 fade-in" style="transition-delay: 0.4s">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon cert-icon-orange">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">Machine Learning Foundations</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>DeepLearning.AI
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2023
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!-- Certification Card 6 -->
+                        <div class="glass-card cert-card p-6 fade-in" style="transition-delay: 0.5s">
+                            <div class="cert-icon-wrapper mb-4">
+                                <div class="cert-icon cert-icon-pink">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-200">AI Foundations for Business</h3>
+                            <p class="cert-platform mb-2">
+                                <i class="fas fa-building mr-2"></i>LinkedIn Learning
+                            </p>
+                            <p class="cert-year mb-4">
+                                <i class="fas fa-calendar mr-2"></i>2024
+                            </p>
+                            <div class="cert-cta">
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-link">
+                                    <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
         <!-- Contact Section -->
         <section id="contact" class="py-20 px-6 bg-slate-900/30">
             <div class="max-w-4xl mx-auto">
@@ -1766,6 +2066,67 @@
                 menuBtn.focus();
             }
         });
+
+        // Certifications Section Interactive Behavior
+        (function() {
+            'use strict';
+            
+            // Ensure DOM is fully loaded
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCertifications);
+            } else {
+                initCertifications();
+            }
+            
+            function initCertifications() {
+                const certCards = document.querySelectorAll('.cert-card');
+                
+                if (certCards.length === 0) return;
+                
+                // Keyboard accessibility for cert cards
+                certCards.forEach(card => {
+                    card.setAttribute('tabindex', '0');
+                    card.setAttribute('role', 'article');
+                    card.setAttribute('aria-label', 'Certification card');
+                    
+                    // Allow keyboard navigation to trigger hover state
+                    card.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const link = this.querySelector('.cert-link');
+                            if (link) {
+                                link.click();
+                            }
+                        }
+                    });
+                    
+                    // Focus management for better UX
+                    card.addEventListener('focus', function() {
+                        this.classList.add('cert-focused');
+                    });
+                    
+                    card.addEventListener('blur', function() {
+                        this.classList.remove('cert-focused');
+                    });
+                });
+                
+                // Optional: Add focus styles via inline style injection
+                // (keeps CSS isolation clean)
+                const focusStyle = document.createElement('style');
+                focusStyle.textContent = `
+                    .cert-card.cert-focused {
+                        outline: 3px solid #8b5cf6;
+                        outline-offset: 3px;
+                    }
+                    
+                    .cert-card.cert-focused .cert-cta {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                `;
+                document.head.appendChild(focusStyle);
+            }
+        })();
 
     </script>
 </body>
