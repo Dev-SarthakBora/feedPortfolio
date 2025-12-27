@@ -15,6 +15,7 @@ This portfolio highlights:
 - My background as a **Data Analyst**
 - Hands-on **data analytics projects**
 - Skills in **Python, SQL, Excel, Power BI**, and **EDA**
+- A certification section to show my achievements.
 - Interactive UI with animations and modern design
 - A contact form integrated using **Formspree**
 
@@ -33,4 +34,3 @@ The website is designed to be **clean, professional, and recruiter-friendly**.
 
 ---
 
-## 📂 Project Structure
