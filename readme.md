@@ -34,7 +34,6 @@ The website is designed to be **clean, professional, and recruiter-friendly**.
 
 ---
 
----
 ## coding agent -- Claude 
 ---
 ## Future improvements related suggestions are always welcome.
