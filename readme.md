@@ -1,6 +1,6 @@
 # 🌐 Sarthak Bora – Portfolio
 
-This repository contains my **personal portfolio website**, built to showcase my skills, projects, and experience as a **Data Analyst**.  
+This repository contains my **personal portfolio website**, built to showcase my skills, projects, and  **Academic** experience.  
 The website is fully **static**, **responsive**, and deployed using **GitHub Pages**.
 
 ---
